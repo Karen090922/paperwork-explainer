@@ -1,0 +1,7 @@
+{
+  "sample_water_bill.jpg": {
+    "total": 45.20,
+    "currency": "USD",
+    "due_date": "2026-12-01"
+  }
+}

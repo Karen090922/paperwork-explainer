@@ -1,0 +1,26 @@
+# Secrets: never commit these
+.env
+.env.local
+
+# Real documents stay on your computer. Only files named sample_* are committed.
+evals/test_docs/*
+!evals/test_docs/.gitkeep
+!evals/test_docs/sample_*
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Claude Code personal settings
+.claude/settings.local.json

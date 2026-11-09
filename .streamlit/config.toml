@@ -1,0 +1,7 @@
+[browser]
+# Don't send usage statistics to Streamlit.
+gatherUsageStats = false
+
+[server]
+# Photos larger than this (in MB) are refused.
+maxUploadSize = 20
