@@ -53,4 +53,4 @@ def get_model() -> BaseChatModel:
     if temperature:
         extra["temperature"] = float(temperature)
 
-    return init_chat_model(model_name, model_provider=provider, **extra)
+    return init_chat_model(model_name, model_provider=provider, timeout=60, max_retries=1, **extra)

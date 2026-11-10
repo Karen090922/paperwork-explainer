@@ -60,7 +60,7 @@ if st.session_state.get("photo_id") != photo_id:
         except ConfigError as problem:
             show_error("Setup problem", str(problem))
         except Exception as problem:  # network errors, rate limits, ...
-            show_error("Something went wrong while reading the photo.", f"Try again in a minute. ({type(problem).__name__})")
+            show_error("Something went wrong while reading the photo.", f"{type(problem).__name__}: {str(problem)[:300]}")
     st.session_state.photo_id = photo_id
     st.session_state.data = data
     st.session_state.explanations = {}
@@ -75,7 +75,7 @@ if cache_key not in st.session_state.explanations:
         try:
             st.session_state.explanations[cache_key] = explain(data, language, level)
         except Exception as problem:
-            show_error("Something went wrong while writing the explanation.", f"Try again in a minute. ({type(problem).__name__})")
+            show_error("Something went wrong while writing the explanation.", f"{type(problem).__name__}: {str(problem)[:300]}")
 explanation = st.session_state.explanations[cache_key]
 
 
